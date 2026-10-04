@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+
+      <h1>Create Account</h1>
+      <p class="subtitle">Fill in the details below to get started</p>
+
+      <form id="signupForm" novalidate>
+
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="John Doe" />
+          <span class="error" id="fullname-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" />
+          <span class="error" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Min. 8 characters" />
+          <span class="error" id="password-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" id="confirm" placeholder="Re-enter your password" />
+          <span class="error" id="confirm-error"></span>
+        </div>
+
+        <button type="submit" class="btn">Create Account</button>
+
+        <p id="success"></p>
+
+      </form>
+
+      <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

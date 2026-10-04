@@ -1,0 +1,131 @@
+/* ==========================================================
+   BASIC PAGE LOOK
+   ========================================================== */
+
+body {
+    /* The font the whole page uses */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Light grey page background so the white form card stands out */
+    background-color: #f2f4f7;
+
+    /* These 3 lines center the form in the middle of the screen */
+    display: flex;
+    justify-content: center;   /* centers left-to-right */
+    align-items: center;       /* centers top-to-bottom */
+
+    min-height: 100vh;         /* 100vh = 100% of the screen height */
+    margin: 0;
+}
+
+
+/* ==========================================================
+   THE FORM CARD (the white box)
+   ========================================================== */
+
+form {
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 10px;          /* rounded corners */
+    width: 320px;                 /* how wide the card is */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);   /* soft shadow underneath */
+}
+
+h1 {
+    margin: 0 0 4px 0;
+    font-size: 22px;
+}
+
+.subtitle {
+    margin: 0 0 24px 0;
+    font-size: 13px;
+    color: #6b7280;               /* grey text */
+}
+
+
+/* ==========================================================
+   EACH FIELD (label + input + error message)
+   ========================================================== */
+
+.form-group {
+    /* Space between one field and the next */
+    margin-bottom: 18px;
+}
+
+label {
+    /* "block" puts the label on its own line, above the input */
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;                  /* fill the width of the card */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cbd5e1;    /* normal grey border */
+    border-radius: 6px;
+
+    /* Without this, padding + width: 100% makes the input too wide */
+    box-sizing: border-box;
+}
+
+input:focus {
+    /* How the input looks while the user is typing in it */
+    outline: none;
+    border-color: #2563eb;        /* blue */
+}
+
+
+/* ==========================================================
+   THE ERROR MESSAGE
+   ==========================================================
+   This <small> is always on the page, but it is EMPTY,
+   so nothing shows. JavaScript puts text inside it, and
+   the text appears in red under the input.
+   ========================================================== */
+
+.error-message {
+    display: block;               /* own line, under the input */
+    color: #dc2626;               /* red */
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px;             /* reserves the space so the form
+                                     does not "jump" when text appears */
+}
+
+/*
+   JavaScript adds the class "input-error" to an input that is empty.
+   This rule then paints that input's border red.
+*/
+.input-error {
+    border-color: #dc2626;
+}
+
+
+/* ==========================================================
+   BUTTON + SUCCESS MESSAGE
+   ========================================================== */
+
+button {
+    width: 100%;
+    padding: 11px;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;              /* hand cursor on hover */
+}
+
+button:hover {
+    background-color: #1d4ed8;    /* slightly darker blue on hover */
+}
+
+.success-message {
+    color: #16a34a;               /* green */
+    font-size: 14px;
+    text-align: center;
+    margin: 14px 0 0 0;
+}

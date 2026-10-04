@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+
+    <!-- We keep our styles in a separate file so the HTML stays easy to read -->
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+    <!--
+      THE FORM
+      ========
+      A <form> is a box that holds inputs.
+      Each input has 3 parts that go together:
+        1. <label>  -> the text the user reads ("Full Name")
+        2. <input>  -> the box the user types in
+        3. <small>  -> the EMPTY red error message. It starts empty,
+                       and JavaScript will fill it in if the user leaves the box blank.
+
+      Notice the id="" on each input and each <small>.
+      An id is like a name tag. JavaScript uses it to grab that exact element.
+
+      novalidate = "browser, do not show YOUR OWN pop-up warnings".
+      We switch the browser's built-in checking off so that OUR red messages
+      are the only ones the student sees.
+    -->
+    <form id="signupForm" novalidate>
+
+        <h1>Create Account</h1>
+        <p class="subtitle">Try clicking Submit without typing anything.</p>
+
+        <!-- ===== FIELD 1: NAME ===== -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="e.g. Ada Lovelace">
+            <!-- This is empty on purpose. JavaScript writes the error message here. -->
+            <small class="error-message" id="nameError"></small>
+        </div>
+
+        <!-- ===== FIELD 2: EMAIL ===== -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" placeholder="e.g. ada@email.com">
+            <small class="error-message" id="emailError"></small>
+        </div>
+
+        <!-- ===== FIELD 3: PASSWORD ===== -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter a password">
+            <small class="error-message" id="passwordError"></small>
+        </div>
+
+        <!--
+          type="submit" means: clicking this button tries to send the form.
+          That click is what triggers our JavaScript check.
+        -->
+        <button type="submit">Submit</button>
+
+        <!-- The green "success" message. Hidden until the form is filled correctly. -->
+        <p class="success-message" id="successMessage"></p>
+
+    </form>
+
+    <!--
+      The <script> tag is at the BOTTOM of the body on purpose.
+      The browser reads this file top to bottom, so by the time it reaches
+      this line, all the inputs above already exist and JavaScript can find them.
+    -->
+    <script src="form.js"></script>
+</body>
+</html>
